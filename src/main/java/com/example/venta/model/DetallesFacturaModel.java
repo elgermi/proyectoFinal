@@ -12,7 +12,7 @@ public class DetallesFacturaModel {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="factura")
+    @JoinColumn(name="factura_id")
     private FacturaModel factura;
     @Column(name="cantidad_profuctos")
     private int cantidadProductos;
