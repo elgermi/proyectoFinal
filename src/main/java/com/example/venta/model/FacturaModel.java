@@ -20,4 +20,5 @@ public class FacturaModel {
     @Column(name="fecha_creacion")
     private Date fechaCreacion;
     private double total;
+
 }

@@ -1,10 +1,13 @@
 package com.example.venta.service;
 
 
+import com.example.venta.model.ClienteModel;
 import com.example.venta.model.DetallesFacturaModel;
 import com.example.venta.model.FacturaModel;
+import com.example.venta.repository.ClienteRepostitory;
 import com.example.venta.repository.DetalleFacturaRepository;
 import com.example.venta.repository.FacturaRepository;
+import com.example.venta.repository.ProductosReposirory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +19,13 @@ public class DetalleFacturaService {
 
     @Autowired
     DetalleFacturaRepository detalleFacturaRepository;
+    @Autowired
+    FacturaRepository facturaRepository;
+    @Autowired
+    ProductosReposirory productosReposirory;
 
+    @Autowired
+    ClienteRepostitory clienteRepostitory;
 
     public DetallesFacturaModel create(DetallesFacturaModel detalle) {
         return this.detalleFacturaRepository.save(detalle);
@@ -34,4 +43,7 @@ public class DetalleFacturaService {
         }
         return null;
     }
+
+
+
 }
