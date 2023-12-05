@@ -1,20 +1,18 @@
 package com.example.venta.controller;
 
 import com.example.venta.model.DetallesFacturaModel;
-import com.example.venta.service.DetalleFacturaService;
+import com.example.venta.service.FacturaYDetalleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("api/v1/detalleFactura")
-public class DetalleFacturaController {
+public class FacturaYDetalleController {
 
     @Autowired
-    DetalleFacturaService detalleFacturaService;
+    FacturaYDetalleService detalleFacturaService;
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {

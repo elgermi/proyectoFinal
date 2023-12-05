@@ -4,6 +4,7 @@ package com.example.venta.service;
 import com.example.venta.model.ClienteModel;
 import com.example.venta.model.DetallesFacturaModel;
 import com.example.venta.model.FacturaModel;
+import com.example.venta.model.ProductosModel;
 import com.example.venta.repository.ClienteRepostitory;
 import com.example.venta.repository.DetalleFacturaRepository;
 import com.example.venta.repository.FacturaRepository;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DetalleFacturaService {
+public class FacturaYDetalleService {
 
     @Autowired
     DetalleFacturaRepository detalleFacturaRepository;
@@ -43,6 +44,11 @@ public class DetalleFacturaService {
         }
         return null;
     }
+
+
+    
+
+
 
 
 
