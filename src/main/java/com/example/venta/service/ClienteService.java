@@ -16,15 +16,15 @@ public class ClienteService {
         return this.clienteRepostitory.save(cliente);
     }
 
-    public String finById(Long id) {
+    public ClienteModel findById(Long id) {
         Optional<ClienteModel> cajaDetalle = this.clienteRepostitory.findById(id);
-
 
         if (cajaDetalle.isPresent()) {
             ClienteModel cliente = cajaDetalle.get();
 
-            return cliente.toString();
+            return cliente;
+        }else{
+            return null;
         }
-        return null;
     }
 }

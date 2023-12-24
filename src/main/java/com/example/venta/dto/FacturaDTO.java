@@ -1,6 +1,6 @@
-package com.example.venta.model;
+package com.example.venta.dto;
 
-import jakarta.persistence.*;
+import com.example.venta.model.ClienteModel;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -8,39 +8,28 @@ import java.util.Date;
 import java.util.Set;
 
 @Data
-@Entity
-@Table(name="factura")
-public class FacturaModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long facturaid;
-    @ManyToOne
-    @JoinColumn(name="clienteid")
+public class FacturaDTO {
+    private Long id;
     private ClienteModel cliente;
-
-
-    @Column(name="fecha_creacion")
     private LocalDate fechaCreacion;
     private double total;
 
-    @OneToMany
-    @JoinColumn(name="factura")
-    private Set<DetallesFacturaModel> lineas;
+    private Set<DetalleFacturaDTO> lineas;
 
-    public Long getFacturaid() {
-        return facturaid;
-    }
-
-    public void setFacturaid(Long facturaid) {
-        this.facturaid = facturaid;
-    }
-
-    public Set<DetallesFacturaModel> getLineas() {
+    public Set<DetalleFacturaDTO> getLineas() {
         return lineas;
     }
 
-    public void setLineas(Set<DetallesFacturaModel> lineas) {
+    public void setLineas(Set<DetalleFacturaDTO> lineas) {
         this.lineas = lineas;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public ClienteModel getCliente() {
@@ -67,3 +56,4 @@ public class FacturaModel {
         this.total = total;
     }
 }
+

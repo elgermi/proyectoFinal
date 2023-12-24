@@ -23,6 +23,14 @@ public class ProductoController {
     public ResponseEntity<?> findById(@PathVariable Long id) {
         return new ResponseEntity<>(this.productoService.findById(id), HttpStatus.OK);
     }
-
+/*
+{
+    "id": 4,
+    "descripcion": "musculosas de verano",
+    "codigo": "15987547",
+    "stock": 50,
+    "precio": 11000.0
+}
+ */
 
 }

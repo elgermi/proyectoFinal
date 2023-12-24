@@ -6,6 +6,7 @@ import com.example.venta.repository.ProductosReposirory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.lang.model.type.DeclaredType;
 import java.util.Optional;
 
 @Service
@@ -17,13 +18,14 @@ public class ProductoService {
         return this.productosReposirory.save(cliente);
     }
 
-    public String findById(Long id){
+    public ProductosModel findById(Long id){
         Optional<ProductosModel> cajaProducto=this.productosReposirory.findById(id);
 
         if(cajaProducto.isPresent()){
             ProductosModel producto= cajaProducto.get();
-            return producto.toString();
+            return producto;
         }
         return null;
     }
+
 }

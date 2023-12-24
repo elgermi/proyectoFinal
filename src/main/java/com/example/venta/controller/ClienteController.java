@@ -17,11 +17,20 @@ public class ClienteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id) {
-        return new ResponseEntity<>(this.clienteService.finById(id), HttpStatus.OK);
-    }
+        return new ResponseEntity<>(this.clienteService.findById(id), HttpStatus.OK);
+
+   }
 
     @PostMapping("/")
     public ResponseEntity<ClienteModel> create(@RequestBody ClienteModel cliente) {
         return new ResponseEntity<>(this.clienteService.create(cliente), HttpStatus.CREATED);
     }
+
+    /*
+    {
+"nombre":"raul",
+"apellido":"quiroga",
+"documento":"58936846"
+}
+     */
 }

@@ -1,25 +1,17 @@
-package com.example.venta.model;
+package com.example.venta.dto;
 
-import jakarta.persistence.*;
+import com.example.venta.model.FacturaModel;
+import com.example.venta.model.ProductosModel;;
+import lombok.Data;
 
 
-@Entity
-@Table(name="linea")
-public class DetallesFacturaModel {
-    @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY )
+
+
+public class DetalleFacturaDTO {
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name="facturaid")
     private FacturaModel factura;
-    @Column(name="cantidad")
     private int cantidadProductos;
-    @ManyToOne
-    @JoinColumn(name="productosid")
     private ProductosModel producto;
-    public DetallesFacturaModel() {
-    }
     private double importe;
 
     public Long getId() {
