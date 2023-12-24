@@ -40,6 +40,7 @@ public class FacturaYDetalleService {
     public FacturaDTO save(FacturaModel factura){
         var facturaReal=armarFactura(factura);
         return armarFacturaDTO(this.facturaRepository.save(facturaReal));
+        //se valida si existe el cliente,el stock y el producto
 
 
     }
